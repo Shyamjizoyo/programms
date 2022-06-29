@@ -1,0 +1,61 @@
+#include <iostream>
+#include<algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+int binarysearch(int arr[],int n,int key){
+int start=0,end=n;
+    while(start<=end){
+    int mid = (start+end)/2;
+    if(arr[mid]==key)
+    {
+    return mid;
+    }
+    else if(arr[mid]>key)   /// 4>3
+    {
+        end = mid-1; // left 
+    }
+    else //if(arr[mid]<key)
+    {
+        start = mid+1; // right 
+    }
+    }
+    return -1;
+}
+/*void display(int arr[]) {
+   for(int i = 0; i < n; ++i)
+   cout << a[i] << " ";*/
+    int main()
+{
+    int n,key;
+    cout<<"enter the size of array :\n"<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"enter the numbers in sorted form\n";
+      for(int i=0; i<=n; i++)
+      {
+      cin>>arr[i];
+      }
+    cout<<"\n"<<endl;
+      //int key;
+      //
+   // int m = sizeof(arr)/sizeof(arr[0]);
+  sort(arr,arr+n+1);
+   
+    for(int i=0;i<=n;i++)
+    cout<<arr[i]<<" "<<endl;
+      cout<<"enter the key to search\n";
+      cin>>key;
+      cout<<" ";
+     // cout<<"the index is\n";
+    
+   int index = binarysearch(arr,n,key);
+    
+    if(index == -1)
+    { 
+    cout<<"not found"<<endl;
+    }
+    else if(index != -1) {
+    cout<<"found at index "<<index<<endl;
+      }
+      return 0;
+}
