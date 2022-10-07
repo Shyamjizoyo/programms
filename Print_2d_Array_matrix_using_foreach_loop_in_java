@@ -1,0 +1,14 @@
+// print all the elements of 2d array
+class printtwoDarray {
+    public static void main ( String [] args)
+    {
+        int a[][] = {{1,2,3,4},{100,200,300,10},{20,30,40,27}};
+        for(int []x:a)
+        {
+            for(int y:x)
+            {
+                System.out.println(y);
+            }
+        }
+    }
+}
